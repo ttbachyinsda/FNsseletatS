@@ -9,9 +9,9 @@ class RC
 {
 public:
     RC();
-    void readRC(char* key, int lkey, char* dest, int& ldest);
-    void writeRC(char* key, int lkey, char* value, int lvalue);
-    void deleteRC(char* key, int lkey);
+    void readRC(char* key, uint16_t lkey, char* dest, uint16_t& ldest);
+    void writeRC(char* key, uint16_t lkey, char* value, uint16_t lvalue);
+    void deleteRC(char* key, uint16_t lkey);
     ~RC();
 private:
     RamCloud *cluster;

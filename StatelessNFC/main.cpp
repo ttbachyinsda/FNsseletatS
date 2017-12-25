@@ -14,8 +14,10 @@ int main()
     cluster.write(table, "43", 2, value, downCast<uint32_t>(strlen(value) + 1));
     Buffer buffer;
     cluster.read(table, "43", 2, &buffer);
-    cout<< buffer.size() <<endl;
     cluster.read(table, "42", 2, &buffer);
+    char dest[120];
+    buffer.copy(0,buffer.size(),dest);
+    cout<<buffer.size()<<' '<<dest<<endl;
     cluster.dropTable("test");
     return 0;
 }
